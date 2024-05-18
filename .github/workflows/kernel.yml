@@ -18,7 +18,7 @@ on:
       KERNEL_DEFCONFIG:
         description: 'Kernel defconfig'
         required: true
-        default: 'vendor/gta4l_eur_open_defconfig'
+        default: 'gta4l_eur_open_defconfig'
       KERNEL_IMAGE_NAME:
         description: 'Kernel image name'
         required: true
