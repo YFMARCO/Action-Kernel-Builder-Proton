@@ -10,7 +10,7 @@ on:
       KERNEL_TREE:
         description: 'Kernel tree URL'
         required: true
-        default: 'https://github.com/YFMARCO/android_kernel_samsung_sm611599'
+        default: 'https://github.com/YFMARCO/android_kernel_samsung_sm6115'
       KERNEL_BRANCH:
         description: 'Kernel tree Branch'
         required: true
