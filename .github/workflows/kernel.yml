@@ -10,7 +10,7 @@ on:
       KERNEL_TREE:
         description: 'Kernel tree URL'
         required: true
-        default: 'https://github.com/cd-YFMARCO/android_kernel_samsung_sm611599'
+        default: 'https://github.com/YFMARCO/android_kernel_samsung_sm611599'
       KERNEL_BRANCH:
         description: 'Kernel tree Branch'
         required: true
@@ -79,7 +79,7 @@ jobs:
       if: env.KERNEL_IS_OK == 'true'
       run: |
         cd android
-        git clone --depth=1 https://github.com/cd-YFMARCO/AnyKernel3.git -b gta4l
+        git clone --depth=1 https://github.com/YFMARCO/AnyKernel3.git -b gta4l
         cd kernel/out/arch/arm64/boot && cp -r ${{ github.event.inputs.KERNEL_IMAGE_NAME }} ${GITHUB_WORKSPACE}/android/AnyKernel3
         cd ${GITHUB_WORKSPACE}/android/AnyKernel3
         zip -r9 UPDATE-AnyKernel3-${{ env.BUILD_DATE }}.zip * -x .git README.md *placeholder
