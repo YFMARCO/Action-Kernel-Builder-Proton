@@ -1,4 +1,4 @@
-name: Build Kernel
+name: Build Kernel Samsung Tab A7
 
 on:
   workflow_dispatch:
@@ -10,15 +10,15 @@ on:
       KERNEL_TREE:
         description: 'Kernel tree URL'
         required: true
-        default: 'https://github.com/carlodandan/android_kernel_realme_sm6225'
+        default: 'https://github.com/YFMARCO/android_kernel_samsung_gta4l'
       KERNEL_BRANCH:
         description: 'Kernel tree Branch'
         required: true
-        default: 'lineage-21'
+        default: '14.0-wip'
       KERNEL_DEFCONFIG:
         description: 'Kernel defconfig'
         required: true
-        default: 'vendor/sm6225-perf_defconfig'
+        default: 'gta4l_eur_open_defconfig'
       KERNEL_IMAGE_NAME:
         description: 'Kernel image name'
         required: true
@@ -97,7 +97,7 @@ jobs:
       if: env.KERNEL_IS_OK == 'true'
       run: |
         cd android
-        git clone --depth=1 https://github.com/cd-Crypton/AnyKernel3.git -b FOR-ALL
+        git clone --depth=1 https://github.com/YFMARCO/AnyKernel3.git -b gta4l
         cp -nf kernel/out/arch/arm64/boot/${{ inputs.KERNEL_IMAGE_NAME }} ${GITHUB_WORKSPACE}/android/AnyKernel3
         cp -nf $(find kernel/out -name '*.ko') ${GITHUB_WORKSPACE}/android/AnyKernel3/modules/system/lib/modules/
         ./toolchains/proton-clang/bin/llvm-strip --strip-debug ./AnyKernel3/modules/system/lib/modules/*.ko
