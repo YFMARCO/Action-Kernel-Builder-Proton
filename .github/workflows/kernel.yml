@@ -10,15 +10,15 @@ on:
       KERNEL_TREE:
         description: 'Kernel tree URL'
         required: true
-        default: 'https://github.com/YFMARCO/android_kernel_samsung_gta4l'
+        default: 'https://github.com/YFMARCO/kernel_test1.git'
       KERNEL_BRANCH:
         description: 'Kernel tree Branch'
         required: true
-        default: '14.0-wip'
+        default: 'master'
       KERNEL_DEFCONFIG:
         description: 'Kernel defconfig'
         required: true
-        default: 'gta4l_eur_open_defconfig'
+        default: 'gta4l_mea_jt_defconfig'
       KERNEL_IMAGE_NAME:
         description: 'Kernel image name'
         required: true
